@@ -6,6 +6,13 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'project-1': "url('/assets/images/project-1.jpg')",
+        'project-2': "url('/assets/images/project-2.jpg')",
+        'project-3': "url('/assets/images/project-3.jpg')",
+        'project-4': "url('/assets/images/project-4.jpg')",
+        'project-5': "url('/assets/images/project-5.jpg')",
+      },
       keyframes: {
         'fade-in-left': {
           '0%': { opacity: '0', transform: 'translateX(-100px)' },

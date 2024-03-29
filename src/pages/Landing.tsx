@@ -2,7 +2,7 @@ import { useState } from "react";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 
 const Landing = () => {
-  // Code to toggle hero image view
+  // Toggle hero image view
   const [projectView, setProjectView] = useState(1);
 
   const handleProjectView = (value: number) => {
@@ -18,6 +18,21 @@ const Landing = () => {
     projectView === 1
       ? 'bg-[url("assets/images/hero-image.jpg")]'
       : 'bg-[url("assets/images/hero-image-alt.jpg")]';
+
+  // Project hover effect
+  const [isHovered, setIsHovered] = useState(0);
+
+  const projectHover = (
+    <span className="absolute top-0 left-0 size-full flex flex-col justify-center gap-4">
+      <div className="bg-black opacity-50 size-full absolute"></div>
+      <p className="w-min text-6xl text-white font-semibold z-10 pl-12">
+        Sample Project
+      </p>
+      <p className="flex items-center gap-x-4 text-xl text-white z-10 pl-12">
+        View more <GoArrowRight />
+      </p>
+    </span>
+  );
 
   return (
     <>
@@ -140,43 +155,60 @@ const Landing = () => {
         </div>
       </div>
 
-      <div className="mb-20">
-        <h2 className="text-7xl font-light opacity-30 mb-10">Our Projects</h2>
+      <div className="mb-20 flex flex-col gap-y-8">
+        <h2 className="text-7xl font-light opacity-30">Our Projects</h2>
 
-        <div className="flex items-center gap-4 flex-wrap [&>*]:h-72 [&>*]:object-cover">
+        <div className="grid grid-cols-4 gap-4 [&>*]:h-72 [&>*]:w-full [&>*]:bg-cover [&>*]:relative [&>*]:cursor-pointer">
           {/* Top two images */}
-          <img
-            className="basis-2/4"
-            src="/assets/images/project-1.jpg"
-            alt="project 1"
-          />
+          <div
+            className="bg-project-1 col-span-2"
+            onMouseEnter={() => setIsHovered(1)}
+            onMouseLeave={() => setIsHovered(0)}
+          >
+            {isHovered === 1 ? projectHover : null}
+          </div>
 
-          <img
-            className="basis-[49%]"
-            src="/assets/images/project-2.jpg"
-            alt="project 2"
-          />
+          <div
+            className="bg-project-2 col-span-2"
+            onMouseEnter={() => setIsHovered(2)}
+            onMouseLeave={() => setIsHovered(0)}
+          >
+            {isHovered === 2 ? projectHover : null}
+          </div>
+          {/* Bottom three */}
+          <div
+            className="bg-project-3"
+            onMouseEnter={() => setIsHovered(3)}
+            onMouseLeave={() => setIsHovered(0)}
+          >
+            {isHovered === 3 ? projectHover : null}
+          </div>
 
-          {/* Bottom three images */}
+          <div
+            className="bg-project-4 col-span-2"
+            onMouseEnter={() => setIsHovered(4)}
+            onMouseLeave={() => setIsHovered(0)}
+          >
+            {isHovered === 4 ? projectHover : null}
+          </div>
 
-          <img
-            className="w-[24%]"
-            src="/assets/images/project-3.jpg"
-            alt="project 3"
-          />
-
-          <img
-            className="w-2/4"
-            src="/assets/images/project-4.jpg"
-            alt="project 4"
-          />
-
-          <img
-            className="w-[24%]"
-            src="/assets/images/project-5.jpg"
-            alt="project 5"
-          />
+          <div
+            className="bg-project-5"
+            onMouseEnter={() => setIsHovered(5)}
+            onMouseLeave={() => setIsHovered(0)}
+          >
+            {isHovered === 5 ? projectHover : null}
+          </div>
         </div>
+
+        <button className="w-fit flex items-center gap-x-4 bg-gray-800 text-white px-10 py-7 self-end uppercase tracking-widest cursor-pointer group">
+          <p className="group-hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)]">
+            All projects
+          </p>{" "}
+          <span className="group-hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)]">
+            <GoArrowRight />
+          </span>
+        </button>
       </div>
     </>
   );
