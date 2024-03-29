@@ -3,9 +3,13 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="flex items-center px-32 py-4">
-      <img className="mr-auto w-28" src="/nav-logo.png" alt="Logo" />
+      <img
+        className="mr-auto w-28"
+        src="/assets/images/nav-logo.png"
+        alt="Logo"
+      />
 
-      <ul className="flex items-center mr-[10%] space-x-20 text-xl uppercase tracking-widest">
+      <ul className="flex items-center mr-[10%] space-x-10 text-xl uppercase tracking-widest">
         <li>
           <NavLink
             className="relative py-1 group"
