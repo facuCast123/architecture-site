@@ -23,7 +23,7 @@ const Landing = () => {
   const [isHovered, setIsHovered] = useState(0);
 
   const projectHover = (
-    <span className="absolute top-0 left-0 size-full flex flex-col justify-center gap-4">
+    <span className="absolute top-0 left-0 size-full flex flex-col justify-center gap-4 animate-fade-in">
       <div className="bg-black opacity-50 size-full absolute"></div>
       <p className="w-min text-6xl text-white font-semibold z-10 pl-12">
         Sample Project
@@ -93,7 +93,7 @@ const Landing = () => {
         </div>
       </div>
 
-      <div className=" flex gap-x-16 relative mb-20">
+      <div className="relative mb-20 flex gap-x-16">
         <div className="w-full h-[90%] bg-gray-50 absolute top-0 left-0"></div>
 
         <div className="w-2/4 h-[500px] relative">
@@ -158,7 +158,7 @@ const Landing = () => {
       <div className="mb-20 flex flex-col gap-y-8">
         <h2 className="text-7xl font-light opacity-30">Our Projects</h2>
 
-        <div className="grid grid-cols-4 gap-4 [&>*]:h-72 [&>*]:w-full [&>*]:bg-cover [&>*]:relative [&>*]:cursor-pointer">
+        <div className="grid grid-cols-4 gap-4 [&>*]:h-72 [&>*]:w-full [&>*]:bg-cover [&>*]:bg-center [&>*]:relative [&>*]:cursor-pointer">
           {/* Top two images */}
           <div
             className="bg-project-1 col-span-2"
@@ -201,11 +201,66 @@ const Landing = () => {
           </div>
         </div>
 
-        <button className="w-fit flex items-center gap-x-4 bg-gray-800 text-white px-10 py-7 self-end uppercase tracking-widest cursor-pointer group">
-          <p className="group-hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)]">
+        <button className="w-fit flex items-center gap-x-4 bg-neutral-800 text-white px-10 py-7 self-end uppercase tracking-widest cursor-pointer group">
+          <p className="group-hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] group-hover:ease-out duration-300">
             All projects
           </p>{" "}
-          <span className="group-hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)]">
+          <span className="group-hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] group-hover:ease-out duration-300">
+            <GoArrowRight />
+          </span>
+        </button>
+      </div>
+
+      <div className="flex flex-col gap-y-8 mb-20">
+        <h2 className="text-7xl font-light opacity-30">Contact us</h2>
+
+        <div className="h-[500px] flex items-center gap-8 mb-10">
+          <form className="flex flex-col gap-y-4 basis-1/3 h-full">
+            <input
+              type="text"
+              name="name"
+              className=" px-4 py-3 bg-gray-200 border border-transparent placeholder-gray-500 focus:outline-none focus:border-gray-500"
+              placeholder="Name"
+            />
+
+            <input
+              required
+              type="tel"
+              name="phone"
+              className=" px-4 py-3 bg-gray-200 border border-transparent placeholder-gray-500 focus:outline-none focus:border-gray-500"
+              placeholder="Phone Number"
+            />
+
+            <input
+              required
+              type="email"
+              name="email"
+              className=" px-4 py-3 bg-gray-200 border border-transparent placeholder-gray-500 focus:outline-none focus:border-gray-500"
+              placeholder="E-mail"
+            />
+
+            <input
+              type="text"
+              name="interest"
+              className=" px-4 py-3 bg-gray-200 border border-transparent placeholder-gray-500 focus:outline-none focus:border-gray-500"
+              placeholder="Interested In"
+            />
+
+            <textarea
+              required
+              className="h-full bg-gray-200 border border-transparent placeholder-gray-500 focus:outline-none focus:border-gray-500"
+              placeholder="   Message"
+            ></textarea>
+          </form>
+
+          <div className="bg-[url('/assets/images/contact-image.jpg')] basis-2/3 h-full bg-no-repeat bg-cover bg-center"></div>
+        </div>
+
+        <button className="w-fit px-14 py-7 flex items-center gap-x-4 bg-neutral-800 text-white uppercase tracking-widest cursor-pointer group">
+          <p className="group-hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] group-hover:ease-out duration-300">
+            Send email
+          </p>{" "}
+          <span className="group-hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] group-hover:ease-out duration-300">
             <GoArrowRight />
           </span>
         </button>

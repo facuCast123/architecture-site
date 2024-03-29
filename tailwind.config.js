@@ -14,13 +14,18 @@ export default {
         'project-5': "url('/assets/images/project-5.jpg')",
       },
       keyframes: {
+        'fade-in': {
+          '0%': { opacity: '0'},
+          '100%': { opacity: '1'},
+        },
         'fade-in-left': {
           '0%': { opacity: '0', transform: 'translateX(-100px)' },
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
       },
-      animations: {
-        'fade-in-left': 'fade-in-left 1s ease-in-out',
+      animation: {
+        'fade-in': 'fade-in 0.3s ease-in-out',
+        'fade-in-left': 'fade-in-left 0.5s ease-in-out',
       }
     },
   },
