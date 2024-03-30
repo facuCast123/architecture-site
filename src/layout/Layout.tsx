@@ -5,12 +5,12 @@ import Footer from "./Footer";
 
 const Layout = () => {
   return (
-    <div className="max-w-[2000px] mx-auto">
+    <div className="max-w-[2000px] mx-auto overflow-hidden">
       <header>
         <Navbar />
       </header>
 
-      <main className="px-48">
+      <main className="md:px-8 lg:px-16 xl:px-24 2xl:px-48">
         <Outlet />
       </main>
 
