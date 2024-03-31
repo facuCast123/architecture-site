@@ -81,9 +81,41 @@ const Navbar = () => {
           </NavLink>
         </li>
 
-        <li>Certifications</li>
+        <li>
+          <NavLink
+            className="relative py-1 group"
+            style={({ isActive }) => {
+              return isActive
+                ? {
+                    boxShadow: "inset 0 1px 0 #000, inset 0 -1px 0 #000",
+                  }
+                : {};
+            }}
+            to="/certifications"
+          >
+            <span className="absolute top-0 left-0 w-[100%] h-[0.05em] bg-black scale-0 origin-center duration-300 group-hover:scale-100"></span>
+            Certifications
+            <span className="absolute bottom-0 left-0 w-[100%] h-[0.05em] bg-black scale-0 origin-center duration-300 group-hover:scale-100"></span>
+          </NavLink>
+        </li>
 
-        <li>Contacts</li>
+        <li>
+          <NavLink
+            className="relative py-1 group"
+            style={({ isActive }) => {
+              return isActive
+                ? {
+                    boxShadow: "inset 0 1px 0 #000, inset 0 -1px 0 #000",
+                  }
+                : {};
+            }}
+            to="/contacts"
+          >
+            <span className="absolute top-0 left-0 w-[100%] h-[0.05em] bg-black scale-0 origin-center duration-300 group-hover:scale-100"></span>
+            Contacts
+            <span className="absolute bottom-0 left-0 w-[100%] h-[0.05em] bg-black scale-0 origin-center duration-300 group-hover:scale-100"></span>
+          </NavLink>
+        </li>
       </ul>
 
       <button className="text-5xl sm:hidden" onClick={toggleMenu}>

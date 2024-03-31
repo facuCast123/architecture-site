@@ -7,6 +7,7 @@ import Layout from "./layout/Layout";
 import Landing from "./pages/Landing";
 import Gallery from "./pages/Gallery";
 import Projects from "./pages/Projects";
+import Project from "./pages/Project";
 import NotFoundPage from "./pages/NotFoundPage";
 
 import "./index.css";
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/projects",
         element: <Projects />,
+      },
+      {
+        path: "/projects/:projectId",
+        element: <Project />,
       },
     ],
   },

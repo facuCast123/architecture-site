@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   // Toggle hero image view
@@ -36,7 +37,8 @@ const Landing = () => {
 
   return (
     <>
-      <div className="h-screen mb-24 flex flex-col gap-4 flex-nowrap md:py-3 md:flex-row md:justify-between lg:py-6 lg:items-center 2xl:max-h-[80vh]">
+      {/* Hero section */}
+      <section className="h-screen mb-24 flex flex-col gap-4 flex-nowrap md:py-3 md:flex-row md:justify-between lg:py-6 lg:items-center 2xl:max-h-[80vh]">
         <div className="items-center text-center gap-y-8 h-fit 2xl:h-[900px] flex flex-col relative order-2 md:self-center md:order-1 lg:w-2/6 lg:items-start lg:justify-center lg:gap-y-16 lg:text-left">
           <h1 className="text-6xl font-semibold relative xl:text-8xl">
             <span className="uppercase font-light opacity-30">Project</span>{" "}
@@ -77,7 +79,7 @@ const Landing = () => {
           </div>
 
           <div className="hidden items-center gap-x-6 text-3xl text-gray-400 md:flex">
-            <p>0{projectView}</p>{" "}
+            <p className="text-black">0{projectView}</p>{" "}
             <span className="text-5xl text-gray-300 font-thin">/</span>{" "}
             <p>02</p>
           </div>
@@ -85,16 +87,19 @@ const Landing = () => {
         <div
           className={`w-full h-full order-1 ${projectViewBg} bg-center bg-cover bg-no-repeat relative shadow-sm md:order-2 xl:w-4/6`}
         >
-          <div className="absolute bottom-0 left-0 flex items-center gap-5 bg-white py-4 px-6 md:py-6 md:px-12 md:text-lg underline-offset-8 uppercase tracking-widest cursor-pointer hover:underline">
-            View project{" "}
-            <span className="text-2xl">
-              <GoArrowRight />
-            </span>
+          <div className="absolute bottom-0 left-0 bg-white py-4 px-6 underline-offset-8 uppercase tracking-widest cursor-pointer hover:underline md:py-6 md:px-12 md:text-lg">
+            <Link className="flex items-center gap-5" to="/projects">
+              View project{" "}
+              <span className="text-2xl">
+                <GoArrowRight />
+              </span>
+            </Link>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="relative mb-20 flex flex-col gap-x-16 gap-y-6 md:flex-row">
+      {/* About section */}
+      <section className="relative mb-20 flex flex-col gap-x-16 gap-y-6 md:flex-row">
         <div className="w-full h-full bg-gray-50 absolute top-0 left-0 xl:shadow-lg 2xl:h-[90%]"></div>
 
         <div className="w-full grid grid-cols-2 grid-rows-4 gap-4 [&>*]:object-cover [&>*]:shadow-md [&>*]:z-10 md:basis-4/6 xl:h-[500px]">
@@ -128,9 +133,10 @@ const Landing = () => {
             Read more <GoArrowRight />
           </button>
         </div>
-      </div>
+      </section>
 
-      <div className="mb-7">
+      {/* Mission statement section */}
+      <section className="mb-7">
         <h2 className="text-5xl text-center xl:text-7xl font-light opacity-30 md:text-start">
           Main Focus / Mission Statement
         </h2>
@@ -156,9 +162,10 @@ const Landing = () => {
             </p>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="mb-20 flex flex-col gap-y-8">
+      {/* Projects section */}
+      <section className="mb-20 flex flex-col gap-y-8">
         <h2 className="text-7xl font-light opacity-30">Our Projects</h2>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 [&>*]:h-72 [&>*]:w-full [&>*]:bg-cover [&>*]:bg-center [&>*]:relative [&>*]:cursor-pointer">
@@ -204,21 +211,24 @@ const Landing = () => {
           </div>
         </div>
 
-        <button className="w-fit flex items-center gap-x-4 bg-neutral-800 text-white px-10 py-7 self-center uppercase tracking-widest cursor-pointer group sm:self-end">
-          <p className="group-hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] group-hover:ease-out duration-300">
-            All projects
-          </p>{" "}
-          <span className="group-hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] group-hover:ease-out duration-300">
-            <GoArrowRight />
-          </span>
+        <button className="w-fit bg-neutral-800 text-white px-10 py-7 self-center uppercase tracking-widest cursor-pointer group sm:self-end">
+          <Link className="flex items-center gap-x-4" to="projects">
+            <p className="group-hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] group-hover:ease-out duration-300">
+              All projects
+            </p>{" "}
+            <span className="group-hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] group-hover:ease-out duration-300">
+              <GoArrowRight />
+            </span>
+          </Link>
         </button>
-      </div>
+      </section>
 
-      <div className="flex flex-col gap-y-8 mb-20">
+      {/* Contact section */}
+      <section className="flex flex-col gap-y-8 pb-20">
         <h2 className="text-7xl font-light opacity-30">Contact us</h2>
 
         <div className="h-[500px] flex items-center gap-8 mb-10">
-          <form className="w-full h-full px-4 flex flex-col gap-y-4 md:basis-1/3">
+          <form className="w-full h-full px-4 flex flex-col gap-y-4 md:basis-1/3 md:px-0">
             <input
               type="text"
               name="name"
@@ -267,7 +277,7 @@ const Landing = () => {
             <GoArrowRight />
           </span>
         </button>
-      </div>
+      </section>
     </>
   );
 };
