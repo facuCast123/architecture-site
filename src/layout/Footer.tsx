@@ -55,7 +55,7 @@ const Footer = () => {
               <span className="text-2xl">
                 <IoCallOutline />
               </span>
-              512 33345587
+              +1 512 33345587
             </p>
 
             <p className="flex gap-x-4">

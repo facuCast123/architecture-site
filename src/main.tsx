@@ -8,6 +8,7 @@ import Landing from "./pages/Landing";
 import Gallery from "./pages/Gallery";
 import Projects from "./pages/Projects";
 import Project from "./pages/Project";
+import Contacts from "./pages/Contacts";
 import NotFoundPage from "./pages/NotFoundPage";
 
 import "./index.css";
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/projects/:projectId",
         element: <Project />,
+      },
+      {
+        path: "/contacts",
+        element: <Contacts />,
       },
     ],
   },
