@@ -8,6 +8,7 @@ import Landing from "./pages/Landing";
 import Gallery from "./pages/Gallery";
 import Projects from "./pages/Projects";
 import Project from "./pages/Project";
+import Certifications from "./pages/Certifications";
 import Contacts from "./pages/Contacts";
 import NotFoundPage from "./pages/NotFoundPage";
 
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/projects/:projectId",
         element: <Project />,
+      },
+      {
+        path: "/certifications",
+        element: <Certifications />,
       },
       {
         path: "/contacts",

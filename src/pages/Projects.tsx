@@ -1,7 +1,7 @@
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { Link } from "react-router-dom";
 
-import projectsData from "../projectsData";
+import projectsData from "../data/projectsData";
 import { useState } from "react";
 
 const Projects = () => {
