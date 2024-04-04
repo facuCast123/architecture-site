@@ -5,7 +5,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Layout from "./layout/Layout";
 import Landing from "./pages/Landing";
-import Gallery from "./pages/Gallery";
 import Projects from "./pages/Projects";
 import Project from "./pages/Project";
 import Certifications from "./pages/Certifications";
@@ -23,10 +22,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Landing />,
-      },
-      {
-        path: "/gallery",
-        element: <Gallery />,
       },
       {
         path: "/projects",

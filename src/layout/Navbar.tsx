@@ -55,24 +55,6 @@ const Navbar = () => {
                   }
                 : {};
             }}
-            to="/gallery"
-          >
-            <span className="absolute top-0 left-0 w-[100%] h-[0.05em] bg-black scale-0 origin-center duration-300 group-hover:scale-100"></span>
-            Gallery
-            <span className="absolute bottom-0 left-0 w-[100%] h-[0.05em] bg-black scale-0 origin-center duration-300 group-hover:scale-100"></span>
-          </NavLink>
-        </li>
-
-        <li>
-          <NavLink
-            className="relative py-1 group"
-            style={({ isActive }) => {
-              return isActive
-                ? {
-                    boxShadow: "inset 0 1px 0 #000, inset 0 -1px 0 #000",
-                  }
-                : {};
-            }}
             to="/projects"
           >
             <span className="absolute top-0 left-0 w-[100%] h-[0.05em] bg-black scale-0 origin-center duration-300 group-hover:scale-100"></span>
@@ -123,9 +105,8 @@ const Navbar = () => {
       </button>
 
       {displayMenu && (
-        <div className="absolute w-full top-[80px] left-0 bg-white flex flex-col gap-y-4 px-8 py-4 text-2xl z-10 md:hidden [&>*]:py-4">
+        <div className="absolute w-full top-[80px] left-0 bg-white flex flex-col gap-y-4 px-8 py-4 text-2xl border-b border-black z-10 md:hidden [&>*]:py-4 [&>*]:border-t">
           <Link to="/">Main</Link>
-          <Link to="/gallery">Gallery</Link>
           <Link to="/projects">Projects</Link>
           <Link to="/certifications">Certifications</Link>
           <Link to="/contacts">Contacts</Link>

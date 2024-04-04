@@ -2,8 +2,8 @@ import { Map, Marker } from "pigeon-maps";
 
 const Contacts = () => {
   return (
-    <section className="flex h-screen items-center mt-10 pb-20">
-      <div className="basis-1/3 flex flex-col">
+    <section className="grid grid-cols-1 grid-rows-2 md:flex md:h-screen items-center mt-10 pb-20">
+      <div className="items-center text-center basis-1/3 flex flex-col md:items-baseline md:text-left">
         <h1 className="text-6xl font-semibold my-12">
           <span className="font-light opacity-30">Contact</span>
           <br />
@@ -34,7 +34,7 @@ const Contacts = () => {
         </div>
       </div>
 
-      <div className="basis-2/3 h-full border border-black [&>*]:h-full">
+      <div className="h-2/4 basis-2/3 md:h-full border border-black [&>*]:h-full">
         <Map defaultCenter={[30.277133, -97.738473]} defaultZoom={10}>
           <Marker width={50} anchor={[30.277133, -97.738473]} />
         </Map>

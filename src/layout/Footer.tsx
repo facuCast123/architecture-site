@@ -26,9 +26,6 @@ const Footer = () => {
               <Link to="/">Main</Link>
             </li>
             <li className="w-fit hover:underline">
-              <Link to="/gallery">Gallery</Link>
-            </li>
-            <li className="w-fit hover:underline">
               <Link to="/projects">Projects</Link>
             </li>
             <li className="w-fit hover:underline">
