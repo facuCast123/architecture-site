@@ -1,14 +1,15 @@
-import React from "react";
+import React, { lazy } from "react";
 import ReactDOM from "react-dom/client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Layout from "./layout/Layout";
 import Landing from "./pages/Landing";
-import Projects from "./pages/Projects";
-import Project from "./pages/Project";
-import Certifications from "./pages/Certifications";
-import Contacts from "./pages/Contacts";
+const Projects = lazy(() => import("./pages/Projects"));
+const Project = lazy(() => import("./pages/Project"));
+const Certifications = lazy(() => import("./pages/Certifications"));
+const Contacts = lazy(() => import("./pages/Contacts"));
+
 import NotFoundPage from "./pages/NotFoundPage";
 
 import "./index.css";

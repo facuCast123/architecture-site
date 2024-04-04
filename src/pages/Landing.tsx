@@ -17,8 +17,8 @@ const Landing = () => {
 
   const projectViewBg =
     projectView === 1
-      ? 'bg-[url("assets/images/hero-image.jpg")]'
-      : 'bg-[url("assets/images/hero-image-alt.jpg")]';
+      ? 'bg-[url("/assets/images/hero-image.jpg")]'
+      : 'bg-[url("/assets/images/hero-image-alt.jpg")]';
 
   // Project hover effect
   const [isHovered, setIsHovered] = useState(0);
