@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <nav className="relative flex items-center py-4 px-8 lg:px-32 2xl:px-32">
       <img
-        className="mr-auto w-20 2xl:w-28"
+        className="mr-auto w-20 z-20 2xl:w-28"
         src="/assets/images/nav-logo.png"
         alt="Logo"
       />
@@ -105,7 +105,7 @@ const Navbar = () => {
       </button>
 
       {displayMenu && (
-        <div className="absolute w-full top-[80px] left-0 bg-white flex flex-col gap-y-4 px-8 py-4 text-2xl border-b border-black z-10 md:hidden [&>*]:py-4 [&>*]:border-t">
+        <div className="absolute w-full top-[80px] left-0 bg-white flex flex-col gap-y-4 px-8 py-4 text-2xl border-b border-black z-10 animate-slide-down md:hidden [&>*]:py-4 [&>*]:border-t">
           <Link to="/">Main</Link>
           <Link to="/projects">Projects</Link>
           <Link to="/certifications">Certifications</Link>

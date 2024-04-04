@@ -9,7 +9,7 @@ const Projects = () => {
 
   return (
     <div className="w-full flex flex-col gap-y-8 pb-20">
-      <h1 className="text-6xl font-semibold my-12">
+      <h1 className="text-6xl font-semibold my-12 text-center lg:text-left">
         <span className="font-light opacity-30">Our</span>
         <br />
         Projects
@@ -21,13 +21,13 @@ const Projects = () => {
           window.scrollTo(0, 0);
           return (
             <div key={id} className="grid grid-cols-1">
-              <div className="flex">
+              <div className="flex flex-col lg:flex-row">
                 <img
                   className="basis-4/6 max-h-[450px] object-cover"
                   src={url}
                   alt={title}
                 />
-                <div className="basis-2/6 p-8 flex flex-col justify-around bg-gray-50">
+                <div className="basis-2/6 p-8 flex flex-col gap-y-4 justify-around bg-gray-50">
                   <h2 className="font-light text-4xl opacity-30">{title}</h2>
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.

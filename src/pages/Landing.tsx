@@ -26,12 +26,20 @@ const Landing = () => {
   const projectHover = (
     <span className="absolute top-0 left-0 size-full flex flex-col justify-center gap-4 animate-fade-in">
       <div className="bg-black opacity-50 size-full absolute"></div>
-      <p className="w-min pl-6 text-4xl text-white font-semibold z-10 sm:pl-12 sm:text-6xl">
+
+      <p className="w-min pl-6 text-4xl text-white font-semibold z-10 cursor-default sm:pl-12 sm:text-6xl">
         Sample Project
       </p>
-      <p className="pl-6 flex items-center gap-x-4 text-xl text-white z-10 sm:pl-12">
-        View more <GoArrowRight />
-      </p>
+
+      <Link
+        to="projects"
+        className="w-fit pl-6 flex items-center gap-x-2 text-xl text-white underline-offset-4 cursor-pointer z-10 hover:underline sm:pl-12"
+      >
+        View more{" "}
+        <span className="mt-1">
+          <GoArrowRight />
+        </span>
+      </Link>
     </span>
   );
 
@@ -168,7 +176,7 @@ const Landing = () => {
       <section className="mb-20 flex flex-col gap-y-8">
         <h2 className="text-7xl font-light opacity-30">Our Projects</h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 [&>*]:h-72 [&>*]:w-full [&>*]:bg-cover [&>*]:bg-center [&>*]:relative [&>*]:cursor-pointer">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 [&>*]:h-72 [&>*]:w-full [&>*]:bg-cover [&>*]:bg-center [&>*]:relative">
           {/* Top two images */}
           <div
             className="bg-project-1 col-span-1 sm:col-span-2"

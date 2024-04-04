@@ -22,10 +22,16 @@ export default {
           '0%': { opacity: '0', transform: 'translateX(-100px)' },
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
+        'slide-down': {
+          '0%': { opacity: '0', transform: 'translateY(-100px)'},
+          '50%': { opacity:'0' },
+          '100%': { opacity: '1', transform: 'translateY(0)'},
+        }
       },
       animation: {
         'fade-in': 'fade-in 0.3s ease-in-out',
         'fade-in-left': 'fade-in-left 0.5s ease-in-out',
+        'slide-down': 'slide-down 0.2s ease-in-out',
       }
     },
   },
